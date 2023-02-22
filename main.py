@@ -1,7 +1,40 @@
 from lib import root_approximation as ra
 
+def validate_input():
 
-if __name__ == '__main__':
+    while True:
+        try:
+            tol = float(input("Please enter a value for the tolerance (e.g. 0.0001): "))
+            if tol <= 0:
+                raise ValueError
+            break
+        except ValueError:
+            print("Invalid input. Please enter a positive number.")
+
+    while True:
+        try:
+            x0 = float(input("Please enter a value for the initial guess x0: "))
+            break
+        except ValueError:
+            print("Invalid input. Please enter a number.")
+
+    while True:
+        try:
+            x1 = float(input("Please enter a value for the initial guess x1: "))
+            break
+        except ValueError:
+            print("Invalid input. Please enter a number.")
+
+    return tol, x0, x1
+
+def main():
+
+    tol, x0, x1 = validate_input()
     a = ra.RootApproximation()
     f = lambda x: x ** 2 - 2
-    print(a.secant_approximation(f, 0, 1, .0001))
+    root = a.secant_approximation(f, x0, x1, tol)
+
+    print(f"The root of the function is approximately: {root:.4f}")
+
+if __name__ == '__main__':
+    main()
