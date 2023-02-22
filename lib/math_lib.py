@@ -14,7 +14,7 @@ class MathLib:
     def exp(self, number, power):
         if power == 0:
             return 1
-        temp = self.exp(self, number, int(power / 2))
+        temp = self.exp(number, int(power / 2))
         if power % 2 == 0:
             return temp * temp
         else:

@@ -20,6 +20,8 @@ class Trignometry:
         result = 0
         for i in range(1, total_iterations):
             result += (self.m_lib.exp(-1, i) * self.m_lib.exp(rad, 2 * i + 1))/self.m_lib.factorial(2 * i + 1)
+
+        print(result)
         return result
 
 

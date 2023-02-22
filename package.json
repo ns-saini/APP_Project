@@ -1,0 +1,23 @@
+{
+  "name": "app_project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "husky": "^8.0.3"
+  }
+  "husky": {
+    "hooks": {
+        "pre-commit": "./commands/pre-commit",
+        "pre-push": "./commands/pre-push $HUSKY_GIT_STDIN"
+    	}
+  }
+}
