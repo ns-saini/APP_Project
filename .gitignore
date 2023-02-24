@@ -1,0 +1,7 @@
+#LaTeX compilation files
+latex/*.aux
+latex/*.fdb_latexmk
+latex/*.fls
+latex/*.log
+latex/*.pdf
+latex/*.synctex.gz
