@@ -5,3 +5,5 @@ latex/*.fls
 latex/*.log
 latex/*.pdf
 latex/*.synctex.gz
+latex/.DS_Store
+.DS_Store

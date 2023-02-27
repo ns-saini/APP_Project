@@ -1,11 +1,40 @@
 \documentclass{report}
-\usepackage{algorithmicx, algpseudocode}
+\usepackage{algorithmicx, algpseudocode, graphicx}
 
 \begin{document}
 \title{CHEERS}
 \author{Team E}
 \date{22 Feb 2023}
 \maketitle
+
+\chapter*{CRC Cards}
+\begin{figure}[h!]
+    \centering
+    \begin{tabular}{@{}c@{}}
+      \includegraphics[width=.4\linewidth]{resources/Trigonometry.png} 
+        \hspace*{30pt}
+      \includegraphics[width=.4\linewidth]{resources/MathLib.png}
+    \end{tabular}
+  
+    \begin{tabular}{@{}c@{}}
+        \includegraphics[width=.4\linewidth]{resources/RootApproximation.png} 
+          \hspace*{30pt}
+        \includegraphics[width=.4\linewidth]{resources/Validator.png}
+      \end{tabular}
+
+      \begin{tabular}{@{}c@{}}
+        \includegraphics[width=.4\linewidth]{resources/ErrorHandler.png} 
+          \hspace*{30pt}
+        \includegraphics[width=.4\linewidth]{resources/OutputGenerator.png}
+      \end{tabular}
+      
+      \begin{tabular}{@{}c@{}}
+        \includegraphics[width=.5\linewidth,height=90pt]{resources/Controller.png}
+      \end{tabular}
+
+      \vspace{\floatsep}
+    \caption{CRC Cards for CHEERS}\label{fig:myfig}
+\end{figure}
 
 \chapter*{Pseudocode}
 \section{Sin using Mclaurin}
