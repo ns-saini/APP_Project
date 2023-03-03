@@ -3,9 +3,6 @@ Method for Sin,
 The sin method is explored further with McLaurin Series.
 Reference: https://blogs.ubc.ca/infiniteseriesmodule/units/unit-3-power-series/taylor-series/maclaurin-expansion-of-sinx/
 The number of iterations are equal to number of precisions. Block number for number of precision
-
-
-
 """
 from lib.math_lib import MathLib
 
