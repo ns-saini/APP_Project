@@ -7,6 +7,72 @@
 \date{22 Feb 2023}
 \maketitle
 
+\section*{Introduction}
+  Coasters prevent condensation from dripping along the glass, which can damage the surface of tables. The project referred to as \textbf {CHEERS} deals with two circular coasters overlapping each other. The objective of \textbf {CHEERS} is to compute the diameter of the overlapping region such that 
+  the real estate is half that of any of the coasters.
+
+\section*{Background}
+  In this project, we determine the roots of an equation to calculate the angle made at the vertex of a coaster using the \textbf{Secant approximation method}. This method approximates the value of a function using a secant line passing through two points on a graph.
+  $$ x_{n+1} = x_n - \frac{f(x_n) \cdot (x_n - x_{n-1})}{f(x_n) - f(x_{n-1})} $$
+
+  \vspace*{20pt}
+  \noindent The Sin/Cos value is approximated using the \textbf{Mclaurin Series} which is the sum of derivatives of a function.
+  $$\sin(x) = \sum_{n=0}^{\infty} \frac{(-1)^n}{(2n+1)!}x^{2n+1}$$
+  $$\cos(x) = \sum_{n=0}^{\infty} \frac{(-1)^n}{(2n)!}x^{2n}$$ 
+
+\section*{Scope}
+  The length \textbf{l} of the overlapping coaster region can be computed by the equation
+  $$l = 2R\left(1 - \cos\frac{\alpha}{2}\right)$$
+
+  \indent R \textrightarrow \;radius of the coaster \\
+  \indent $\alpha$ \textrightarrow \;angle created with the vertex at the centre point of the left coaster
+
+  \vspace*{20pt}
+  The angle, $\alpha$ can be calculated using
+  $$\alpha - \sin(\alpha) = \frac{\pi}{2}$$
+  
+  \vspace*{20pt}
+  
+  \begin{itemize}
+    \item {The roots of the equation need to be determined to compute the value of $\alpha$. We use the Secant approximation method to arrive at a solution.}
+    \item {The Mclaurin series has been used to approximate the Sin and Cos values and, subsequently, calculate l.}
+  \end{itemize}
+
+\section*{Objectives}
+\begin{itemize}
+  \item To compute the value of $\Pi$.
+  \item To compute the exponent of a number using recursion.
+  \item To compute the factorial of a number using recursion.
+  \item To approximate Sin and Cos using Mclaurin Series.
+  \item To find the roots of an equation using Secant Approximation.
+\end{itemize}
+
+\section*{Assumptions}
+  The initial guess values for approximating the roots of an equation will be pre-determined.
+
+\section*{Roles \& Responsibilities}
+  \begin{center}
+    \begin{tabular}{ |p{3cm}|p{3cm}|p{3cm}|  }
+      \hline
+      \multicolumn{3}{|c|}{\textbf{TEAM E}} \\
+      \hline
+      \textbf{Student ID}& \textbf{Name} & \textbf{Responsibilities} \\
+      \hline
+      40195801 & Nishant Saini & Algorithms \\
+      \hline
+      40207625 & Pouria Pirian & XML \\
+      \hline
+      40226505 & Omer Saeym & Input Validation \\
+      \hline
+      40218678 & Sachin Prakash & CRC cards, Pseudocode \\
+      \hline
+      40234194 & Chandra Sagar Reddy & Evidence, Referencing \\
+      \hline
+      40230025 & Kajal Sehrawat & Controller   \\
+      \hline
+      \end{tabular}
+  \end{center}
+
 \chapter*{CRC Cards}
 \begin{figure}[h!]
     \centering
