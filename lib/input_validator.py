@@ -1,5 +1,4 @@
 def validate_input():
-
     while True:
         try:
             tol = float(input("Please enter a value for the tolerance (e.g. 0.0001): "))
