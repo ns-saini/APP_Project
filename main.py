@@ -5,7 +5,7 @@ def validate_input():
     while True:
         try:
             tol = float(input("Please enter a value for the tolerance (e.g. 0.0001): "))
-            if tol <= 0:
+            if tol <== 0:
                 raise ValueError
             break
         except ValueError:
