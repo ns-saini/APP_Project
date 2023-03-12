@@ -1,17 +1,22 @@
 \documentclass{report}
-\usepackage{algorithmicx, algpseudocode, graphicx}
+\usepackage{algorithmicx, algpseudocode, graphicx, imakeidx, hyperref}
+\usepackage[a4paper, total={6in, 8in}]{geometry}
 
+\makeindex
 \begin{document}
 \title{CHEERS}
 \author{Team E}
 \date{22 Feb 2023}
 \maketitle
+\tableofcontents{}
+\printindex{}
 
-\section*{Introduction}
+\chapter{Outline}
+\section{Introduction}
   Coasters prevent condensation from dripping along the glass, which can damage the surface of tables. The project referred to as \textbf {CHEERS} deals with two circular coasters overlapping each other. The objective of \textbf {CHEERS} is to compute the diameter of the overlapping region such that 
   the real estate is half that of any of the coasters.
 
-\section*{Background}
+\section{Background}
   In this project, we determine the roots of an equation to calculate the angle made at the vertex of a coaster using the \textbf{Secant approximation method}. This method approximates the value of a function using a secant line passing through two points on a graph.
   $$ x_{n+1} = x_n - \frac{f(x_n) \cdot (x_n - x_{n-1})}{f(x_n) - f(x_{n-1})} $$
 
@@ -20,14 +25,14 @@
   $$\sin(x) = \sum_{n=0}^{\infty} \frac{(-1)^n}{(2n+1)!}x^{2n+1}$$
   $$\cos(x) = \sum_{n=0}^{\infty} \frac{(-1)^n}{(2n)!}x^{2n}$$ 
 
-\section*{Scope}
+\section{Scope}
   The length \textbf{l} of the overlapping coaster region can be computed by the equation
   $$l = 2R\left(1 - \cos\frac{\alpha}{2}\right)$$
 
   \indent R \textrightarrow \;radius of the coaster \\
   \indent $\alpha$ \textrightarrow \;angle created with the vertex at the centre point of the left coaster
 
-  \vspace*{20pt}
+  \vspace{20pt}
   The angle, $\alpha$ can be calculated using
   $$\alpha - \sin(\alpha) = \frac{\pi}{2}$$
   
@@ -38,7 +43,7 @@
     \item {The Mclaurin series has been used to approximate the Sin and Cos values and, subsequently, calculate l.}
   \end{itemize}
 
-\section*{Objectives}
+\section{Objectives}
 \begin{itemize}
   \item To compute the value of $\Pi$.
   \item To compute the exponent of a number using recursion.
@@ -47,12 +52,12 @@
   \item To find the roots of an equation using Secant Approximation.
 \end{itemize}
 
-\section*{Assumptions}
+\section{Assumptions}
   The initial guess values for approximating the roots of an equation will be pre-determined.
 
-\section*{Roles \& Responsibilities}
+\section{Roles \& Responsibilities}
   \begin{center}
-    \begin{tabular}{ |p{3cm}|p{3cm}|p{3cm}|  }
+    \begin{tabular}{ |p{4cm}|p{4cm}|p{4cm}|  }
       \hline
       \multicolumn{3}{|c|}{\textbf{TEAM E}} \\
       \hline
@@ -73,39 +78,41 @@
       \end{tabular}
   \end{center}
 
-\chapter*{CRC Cards}
+\chapter{CRC Cards}
 \begin{figure}[h!]
     \centering
     \begin{tabular}{@{}c@{}}
-      \includegraphics[width=.4\linewidth]{resources/Trigonometry.png} 
+      \includegraphics[width=.3\linewidth]{resources/Trigonometry.png} 
         \hspace*{30pt}
-      \includegraphics[width=.4\linewidth]{resources/MathLib.png}
+      \includegraphics[width=.3\linewidth]{resources/MathLib.png}
     \end{tabular}
   
     \begin{tabular}{@{}c@{}}
-        \includegraphics[width=.4\linewidth]{resources/RootApproximation.png} 
+        \includegraphics[width=.3\linewidth]{resources/RootApproximation.png} 
           \hspace*{30pt}
-        \includegraphics[width=.4\linewidth]{resources/Validator.png}
+        \includegraphics[width=.3\linewidth]{resources/Validator.png}
       \end{tabular}
 
       \begin{tabular}{@{}c@{}}
-        \includegraphics[width=.4\linewidth]{resources/ErrorHandler.png} 
+        \includegraphics[width=.3\linewidth]{resources/ErrorHandler.png} 
           \hspace*{30pt}
-        \includegraphics[width=.4\linewidth]{resources/OutputGenerator.png}
+        \includegraphics[width=.3\linewidth]{resources/OutputGenerator.png}
       \end{tabular}
       
       \begin{tabular}{@{}c@{}}
-        \includegraphics[width=.5\linewidth,height=90pt]{resources/Controller.png}
+        \includegraphics[width=.4\linewidth,height=90pt]{resources/Controller.png}
       \end{tabular}
 
       \vspace{\floatsep}
     \caption{CRC Cards for CHEERS}\label{fig:myfig}
 \end{figure}
 
-\chapter*{Pseudocode}
+\chapter{Pseudocode}
 \section{Sin using Mclaurin}
+\begin{flushleft}
 We arrive at a value for sin of a number using the Mclaurin series expansion.
-\break
+\end{flushleft}
+% \break
 \begin{algorithmic}[1]
     \Function{calculate\_sin}{$rad$}
         \State $total\_iterations \gets precision$
@@ -119,8 +126,10 @@ We arrive at a value for sin of a number using the Mclaurin series expansion.
 \end{algorithmic}
 
 \section{Secant Approximation}
+\begin{flushleft}
 The roots of an equation can be derived using the secant approximation method.
-\break
+\end{flushleft}
+% \break
 \begin{algorithmic}[1]
 \Function{secant\_approximation}{func, $x_0$, $x_1$, $e$}
     \State $x_2 \gets 0$
@@ -146,8 +155,10 @@ The roots of an equation can be derived using the secant approximation method.
 \end{algorithmic}
 
 \section{Pi Calculation}
-The algorithm to calculate the value of Pi is the following.
-\break
+\begin{flushleft}
+  The algorithm to calculate the value of Pi is the following.
+\end{flushleft}
+% \break
 \begin{algorithmic}[1]
     \Function{CalculatePi}{}
         \State $val \gets 0.0$
@@ -161,8 +172,10 @@ The algorithm to calculate the value of Pi is the following.
 \end{algorithmic}
 
 \section{Exponent}
+\begin{flushleft}
 The exponent of a number can be obtained using the following algorithm.
-\break
+\end{flushleft}
+% \break
 \begin{algorithmic}[1]
 \Function{exp}{$number$, $power$}
     \If{$power = 0$}
@@ -178,8 +191,10 @@ The exponent of a number can be obtained using the following algorithm.
 \end{algorithmic}
 
 \section{Factorial}
+\begin{flushleft}
 This is the algorithm used to obtain the factorial of a number.
-\break
+\end{flushleft}
+% \break
 \begin{algorithmic}[1]
 \Function{factorial}{$num$}
   \If{$num < 0$}
@@ -193,5 +208,5 @@ This is the algorithm used to obtain the factorial of a number.
 \EndFunction
 \end{algorithmic}
 
-
+\printindex
 \end{document}
