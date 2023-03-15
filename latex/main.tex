@@ -1,7 +1,11 @@
 \documentclass{report}
 \usepackage{algorithmicx, algpseudocode, graphicx, imakeidx, hyperref}
 \usepackage[a4paper, total={6in, 8in}]{geometry}
+\usepackage{titlesec}
 
+\titleformat{\chapter}[display]
+  {\normalfont\bfseries}{}{0pt}{\Huge}
+  
 \makeindex
 
 \begin{document}
@@ -13,6 +17,7 @@
     \vspace{1cm}
     \Huge\\DELIVERABLE 1\\
     \vspace{1cm}
+
     \Large \textbf{TEAM E}\\
     \begin{large}
       \vspace{.5cm}
@@ -23,14 +28,14 @@
       Omer Sayem (40226505)\\
       Kajal Sehrawat (40230025)\\
     \end{large}
-    \begin{Large}
-      
+
+    \begin{Large}  
       \vspace{1 cm}
       Department of Computer Science and Software Engineering \\
       Gina Cody School of Engineering and Computer Science \\
       \textbf{Concordia University, Montreal}\\
-
       \vspace{1 cm}
+      
       \today \\
     \end{Large}
   \end{center}
@@ -45,7 +50,7 @@
 \tableofcontents{}
 \printindex{}
 
-\chapter{Outline}
+\chapter{Overview}
 \section{Introduction}
   Coasters prevent condensation from dripping along the glass, which can damage the surface of tables. The project referred to as \textbf {CHEERS} deals with two circular coasters overlapping each other. The objective of \textbf {CHEERS} is to compute the diameter of the overlapping region such that 
   the real estate is half that of any of the coasters.
@@ -89,37 +94,54 @@
 \section{Assumptions}
   The initial guess values for approximating the roots of an equation will be pre-determined.
 
-\chapter{CRC Cards}
-\begin{figure}[h!]
-    \centering
-    \begin{tabular}{@{}c@{}}
-      \includegraphics[width=.3\linewidth]{resources/Trigonometry.png} 
-        \hspace*{30pt}
-      \includegraphics[width=.3\linewidth]{resources/MathLib.png}
-    \end{tabular}
-  
-    \begin{tabular}{@{}c@{}}
-        \includegraphics[width=.3\linewidth]{resources/RootApproximation.png} 
-          \hspace*{30pt}
-        \includegraphics[width=.3\linewidth]{resources/Validator.png}
-      \end{tabular}
+\chapter{Problem 1}
+  \section{Solution approach}
+    Give a brief description about the solution
+    \pagebreak
 
+  \section{Object Oriented Design}
+    \subsection{Sequence Diagram}
+      \vspace{1cm}
+      \begin{figure}[h!]
+        \includegraphics[width=1\linewidth]{resources/sequence.jpeg}
+        \vspace{.5cm}
+        \caption{Process interaction}
+        \label{fig:Sequence Diagram}
+      \end{figure}
+      \vspace{2cm}
+
+  \subsection{CRC Cards}
+  \begin{figure}[h!]
+      \centering
       \begin{tabular}{@{}c@{}}
-        \includegraphics[width=.3\linewidth]{resources/ErrorHandler.png} 
+        \includegraphics[width=.3\linewidth]{resources/Trigonometry.png} 
           \hspace*{30pt}
-        \includegraphics[width=.3\linewidth]{resources/OutputGenerator.png}
+        \includegraphics[width=.3\linewidth]{resources/MathLib.png}
       \end{tabular}
-      
+    
       \begin{tabular}{@{}c@{}}
-        \includegraphics[width=.4\linewidth,height=90pt]{resources/Controller.png}
-      \end{tabular}
+          \includegraphics[width=.3\linewidth]{resources/RootApproximation.png} 
+            \hspace*{30pt}
+          \includegraphics[width=.3\linewidth]{resources/Validator.png}
+        \end{tabular}
 
-      \vspace{\floatsep}
-    \caption{CRC Cards for CHEERS}\label{fig:myfig}
-\end{figure}
+        \begin{tabular}{@{}c@{}}
+          \includegraphics[width=.3\linewidth]{resources/ErrorHandler.png} 
+            \hspace*{30pt}
+          \includegraphics[width=.3\linewidth]{resources/OutputGenerator.png}
+        \end{tabular}
+        
+        \begin{tabular}{@{}c@{}}
+          \includegraphics[width=.4\linewidth,height=90pt]{resources/Controller.png}
+        \end{tabular}
 
-\chapter{Pseudocode}
-\section{Sin using Mclaurin}
+        \vspace{\floatsep}
+      \caption{CRC Cards for CHEERS}\label{fig:myfig}
+  \end{figure}
+
+\chapter{Problem 2}
+\section{Pseudocode}
+\subsection{Sin using Mclaurin}
 \begin{flushleft}
 We arrive at a value for sin of a number using the Mclaurin series expansion \cite{doi:10.1137/1021091}.
 \end{flushleft}
@@ -146,7 +168,7 @@ While each of the methods have advantages and disadvantages of their own, Mclaur
   \item  \textbf{Accuracy} : The accuracy of Maclaurin series increases with every new term that is added.So, with every iteration it rapidly converges to true value of sin.
   \item \textbf{Versatility}: The Maclaurin series can be easily extended to calculate other trigonometric functions, such as cosine and tangent, by simply changing the coefficients of the terms in the series.
 \end{itemize}
-\section{Secant Approximation}
+\subsection{Secant Approximation}
 \begin{flushleft}
 The roots of an equation can be derived using the secant approximation method \cite{Wikipedia:SecantMethod}.
 \end{flushleft}
@@ -185,7 +207,7 @@ $$ x_{n+1} = x_n - \frac{f(x_n) \cdot (x_n - x_{n-1})}{f(x_n) - f(x_{n-1})} $$
   \end{itemize}
 \end{flushleft}
 
-\section{Pi Calculation}
+\subsection{Pi Calculation}
 \begin{flushleft}
   The value of pi is calculated using Leibniz formula.
 \end{flushleft}
@@ -212,7 +234,8 @@ $${\frac {\pi }{4}}=\sum _{k=0}^{\infty }{\frac {(-1)^{k}}{2k+1}}$$
     \item \textbf{Accuracy} : The Leibniz formula gives an accurate approximation of $\pi$, with each additional term of the series increasing the accuracy of the approximation.The formula can be used to calculate $\pi$ to any desired level of precision, depending on how many terms of the series are used.
   \end{itemize}
 \end{flushleft}
-\section{Exponent}
+
+\subsection{Exponent}
 \begin{flushleft}
 The exponent of a number can be obtained using the following algorithm.
 \end{flushleft}
@@ -235,7 +258,8 @@ The exponent of a number can be obtained using the following algorithm.
   The above algorithm is preferred over naive approach as it require less number of recursive function calls.
   The naive approach can quickly become impractical or even impossible for very large exponents, as the number of multiplications required grows exponentially with the size of the exponent. The exponentiation by squaring approach, on the other hand, uses recursive halving of the exponent to reduce the number of multiplications required, making it more practical for large exponents.
 \end{flushleft}
-\section{Factorial}
+
+\subsection{Factorial}
 \begin{flushleft}
 This is the algorithm used to obtain the factorial of a number.
 \end{flushleft}
@@ -252,6 +276,8 @@ This is the algorithm used to obtain the factorial of a number.
   \State \textbf{return} $result$
 \EndFunction
 \end{algorithmic}
+
+\chapter{Problem 3}
 
 \bibliographystyle{unsrt}
 \bibliography{citation}
