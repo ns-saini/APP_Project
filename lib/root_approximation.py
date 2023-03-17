@@ -1,8 +1,15 @@
-class RootApproximation:
+from scipy.optimize import fsolve
+
+from lib.root_approximation_abstract import RootApproximation
+
+
+class RootApproximation_WBI(RootApproximation):
     def __init__(self):
         self.num_terms = 100
+        super().__init__()
 
-    def secant_approximation(self, func, x0, x1, e):
+    def get_roots(self, func, e) -> list:
+        x0, x1 = 0, 99
         x2 = 0
         step = 1
         while True:
@@ -17,10 +24,20 @@ class RootApproximation:
             step += 1
 
             if step > self.num_terms:
-                print("Not convergent")
+                raise Exception("Not convergent")
                 break
 
             if func(x2) - func(x1) > e:
                 break
 
         return x2
+
+
+class RootApproximation_BI(RootApproximation):
+    def __init__(self) -> None:
+        super().__init__()
+        self.num_terms = 100
+
+    def get_roots(self, func, e):
+        root = fsolve(func, 0)
+        return root
