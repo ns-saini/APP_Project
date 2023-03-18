@@ -18,9 +18,8 @@ class TrignometryWBI(Trig):
     def sin(self, rad):
         total_iterations = self.precision
         result = 0
-        for i in range(1, total_iterations):
-            result += (self.m_lib.pow(-1, i) * self.m_lib.pow(rad, 2 * i + 1)) / self.m_lib.factorial(2 * i + 1)
-
+        for i in range(0, total_iterations):
+            result += (self.m_lib.pow(-1, i) * self.m_lib.pow(rad, (2 * i) + 1)) / self.m_lib.factorial((2 * i) + 1)
         return result
 
     def cos(self, rad: float) -> float:
