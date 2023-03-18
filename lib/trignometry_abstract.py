@@ -6,5 +6,9 @@ class Trignometry(ABC):
         super().__init__()
 
     @abstractmethod
-    def sin(self, rad):
+    def sin(self, rad: float) -> float:
+        pass
+
+    @abstractmethod
+    def cos(self, rad: float) -> float:
         pass

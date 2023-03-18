@@ -30,7 +30,7 @@ class RootApproximation_WBI(RootApproximation):
             if func(x2) - func(x1) > e:
                 break
 
-        return x2
+        return [x2]
 
 
 class RootApproximation_BI(RootApproximation):
@@ -38,6 +38,6 @@ class RootApproximation_BI(RootApproximation):
         super().__init__()
         self.num_terms = 100
 
-    def get_roots(self, func, e):
+    def get_roots(self, func, e) -> list:
         root = fsolve(func, 0)
         return root
