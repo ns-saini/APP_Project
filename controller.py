@@ -1,38 +1,38 @@
-from lib.math_lib import calculate_pi
-from lib.trignometry import *
+from lib.trignometry import TrignometryWBI
+from lib.math_lib import MathLib_WBI
+
+R = float(input("Enter the radius: "))
+twbi = TrignometryWBI()
+mwbi = MathLib_WBI()
 
 
-
-def angle_alpha():
-
-    """
-    alpha - sin(alpha) = pi/2
-    """
-
-    def f(alpha):
-        twbi = TrignometryWBI()
-        mwbi = MathLib_WBI()
-        return alpha - twbi.sin(alpha) - mwbi.get_pi()/2
+def f_value(alphaa):
+    return alphaa - twbi.sin(alphaa) - mwbi.get_pi()/2
 
 
-    def f_derivative(alpha):
-        twbi = TrignometryWBI()
-        return 1 - twbi.cos(alpha)
+# BISECTION METHOD
 
-    alpha = 1  
-    tol = 1e-6
-    maximum_iterations = 100
+# Use the bisection method to find the value of alpha that solves f(alpha) = 0
+a = 0
+b = mwbi.get_pi()
+tolerance = 1e-6
 
-    for i in range(maximum_iterations):
-        f_alpha = f(alpha)
-        f_derivative_alpha = f_derivative(alpha)
-        alpha_next = alpha - f_alpha / f_derivative_alpha
-        if abs(alpha_next - alpha) < tol:
-            return alpha_next
-        alpha = alpha_next
+while b - a > tolerance:
+    c = (a + b) / 2
+    if f_value(a) * f_value(c) < 0:
+        b = c
+    else:
+        a = c
 
-    raise ValueError("Maximum iterations exceeded without convergence.")
+alpha = (a + b) / 2
 
-# Find the value of alpha that satisfies the equation alpha - sin(alpha) = pi/2
-alpha = angle_alpha()
-print("The value of alpha that satisfies the equation is:", alpha)
+# Calculate the length of the segment X1X2
+
+l = 2*R*(1 - twbi.cos(alpha/2))
+
+print("The value of alpha is: ", alpha)
+
+print("The length of segment is: ", l)
+
+# Print the result
+print(f"The two coasters need to be moved {l:.4f} units on top of each other.")
