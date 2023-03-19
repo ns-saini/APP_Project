@@ -6,8 +6,8 @@ twbi = TrignometryWBI()
 mwbi = MathLib_WBI()
 
 
-def f_value(alphaa):
-    return alphaa - twbi.sin(alphaa) - mwbi.get_pi()/2
+def f_value(alpha):
+    return alpha - twbi.sin(alpha) - mwbi.get_pi()/2
 
 
 # BISECTION METHOD
