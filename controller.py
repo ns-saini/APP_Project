@@ -1,5 +1,5 @@
-from lib.math_lib import MathLib
-from lib.trignometry import Trignometry
+from lib.math_lib import calculate_pi
+from lib.trignometry import *
 
 
 
@@ -10,11 +10,14 @@ def angle_alpha():
     """
 
     def f(alpha):
-        return alpha - Trignometry.sin(alpha) - MathLib.get_pi/2
-    
+        twbi = TrignometryWBI()
+        mwbi = MathLib_WBI()
+        return alpha - twbi.sin(alpha) - mwbi.get_pi()/2
+
 
     def f_derivative(alpha):
-        return 1 - Trignometry.cos(alpha)
+        twbi = TrignometryWBI()
+        return 1 - twbi.cos(alpha)
 
     alpha = 1  
     tol = 1e-6
