@@ -11,8 +11,7 @@ def calc_wbi():
     alpha = calculate_pi()/2 + twbi.sin(alpha[0])
 
     # sine_value = twbi.sin()
-    print("Alpha is ")
-    print(alpha)
+    print("Alpha is ", alpha)
     length = 2 * radius * (1 - twbi.cos(alpha/2))
     return length
 
@@ -25,8 +24,8 @@ def calc_bi():
     alpha = calculate_pi()/2 + tbi.sin(alpha[0])
 
     # sine_value = tbi.sin()
-    print("Alpha is ")
-    print(alpha)
+    print("Alpha is: ", alpha)
+    
     length = 2 * radius * (1 - tbi.cos(alpha/2))
     return length
 
