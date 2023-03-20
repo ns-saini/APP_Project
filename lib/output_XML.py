@@ -12,6 +12,15 @@ dtd = '''<!DOCTYPE root [
 
 class XMLHandler:
     def process_data(self, output_file):
+        """
+        Generates an XML output file containing radius and corresponding length of a coaster track.
+
+        Args:
+        - output_file: the name of the output file to be created
+
+        Returns:
+        - None
+        """
         # Create an instance of the Coaster class
         # I can just read the inputs from a function in controller
         coaster = Coaster()
@@ -38,4 +47,4 @@ class XMLHandler:
 
         # Create the ElementTree object and write it to a file
         output_tree = ET.ElementTree(output_root)
-        output_tree.write(output_file, xml_declaration=True, encoding="utf-8", method="xml", , doctype=dtd)
+        output_tree.write(output_file, xml_declaration=True, encoding="utf-8", method="xml", doctype=dtd)

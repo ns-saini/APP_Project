@@ -1,8 +1,24 @@
 class RootApproximation:
     def __init__(self):
+        """
+        Initializes an instance of the RootApproximation class with a default value of 100 for the number of terms.
+        """
         self.num_terms = 100
 
     def secant_approximation(self, func, x0, x1, e):
+        """
+        Uses the secant method to approximate the root of a given function within a given tolerance.
+
+        Args:
+        - func: the function to be approximated
+        - x0: the initial guess for the root
+        - x1: the second initial guess for the root
+        - e: the tolerance for the approximation
+
+        Returns:
+        - The approximation for the root of the given function within the given tolerance.
+        """
+
         x2 = 0
         step = 1
         while True:
