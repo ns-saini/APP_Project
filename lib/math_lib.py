@@ -103,7 +103,7 @@ class MathLibWBI(ML):
         Returns:
             float: The value of pi.
         """
-        if self.Pi is not None:
-            return self.Pi
+        if self.pi is not None:
+            return self.pi
         return calculate_pi()
     
