@@ -16,6 +16,15 @@ class TrignometryWBI(Trig):
         self.m_lib = MathLib_WBI()
 
     def sin(self, rad):
+        """
+        Calculates the sin of a given angle in radians using the McLaurin series with the given precision.
+
+        Args:
+            rad (float): The angle in radians.
+
+        Returns:
+            float: The sin of the angle.
+        """
         total_iterations = self.precision
         result = 0
         for i in range(0, total_iterations):
@@ -23,6 +32,15 @@ class TrignometryWBI(Trig):
         return result
 
     def cos(self, rad: float) -> float:
+        """
+        Calculates the cos of a given angle in radians using the McLaurin series with the given precision.
+
+        Args:
+            rad (float): The angle in radians.
+
+        Returns:
+            float: The cos of the angle.
+        """
         total_iterations = self.precision
         result = 0 
         for i in range(0, total_iterations):
@@ -36,7 +54,25 @@ class TrignometryBI(Trig):
         self.m_lib = MathLib_BI()
 
     def sin(self, rad: float) -> float:
+        """
+        Calculates the sin of a given angle in radians using the built-in `math` library.
+
+        Args:
+            rad (float): The angle in radians.
+
+        Returns:
+            float: The sin of the angle.
+        """
         return math.sin(rad)
 
     def cos(self, rad: float) -> float:
+        """
+        Calculates the cos of a given angle in radians using the built-in `math` library.
+
+        Args:
+            rad (float): The angle in radians.
+
+        Returns:
+            float: The cos of the angle.
+        """
         return math.cos(rad)

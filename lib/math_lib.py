@@ -3,8 +3,14 @@ import math
 
 
 def calculate_pi():
+    """
+    Calculates the value of pi using the Leibniz formula.
+
+    Returns:
+        float: The value of pi.
+    """
     val = 0.0
-    total_terms = 100
+    total_terms = 1000
     for i in range(1, 2 * total_terms, 2):
         sign = -(i % 4 - 2)
         val += float(sign) / i
@@ -16,12 +22,37 @@ class MathLib_BI(ML):
         super().__init__(4)
 
     def pow(self, number: float, power: int) -> float:
+        """
+        Calculates the power of a given number using the built-in `math` library.
+
+        Args:
+            number (float): The number to calculate the power of.
+            power (int): The power to raise the number to.
+
+        Returns:
+            float: The result of the power operation.
+        """
         return math.pow(number, power)
 
     def factorial(self, number: int) -> int:
+        """
+        Calculates the factorial of a given number using the built-in `math` library.
+
+        Args:
+            number (int): The number to calculate the factorial of.
+
+        Returns:
+            int: The result of the factorial operation.
+        """
         return math.factorial(number)
 
     def get_pi(self) -> float:
+        """
+        Returns the value of pi using the built-in `math` library.
+
+        Returns:
+            float: The value of pi.
+        """
         return math.pi
 
 
@@ -30,6 +61,16 @@ class MathLib_WBI(ML):
         self.PI = None
 
     def pow(self, number: float, power: int) -> float:
+        """
+        Calculates the power of a given number using the recursive method.
+
+        Args:
+            number (float): The number to calculate the power of.
+            power (int): The power to raise the number to.
+
+        Returns:
+            float: The result of the power operation.
+        """
         if power == 0:
             return 1
         elif power % 2 == 0:
@@ -39,6 +80,15 @@ class MathLib_WBI(ML):
             return number * pow(number, power - 1)
 
     def factorial(self, num: int) -> int:
+        """
+        Calculates the factorial of a given number using the iterative method.
+
+        Args:
+            num (int): The number to calculate the factorial of.
+
+        Returns:
+            int: The result of the factorial operation.
+        """
         if num < 0:
             raise ValueError("Factorial can't be calculated for negative numbers")
         result = 1
@@ -47,8 +97,13 @@ class MathLib_WBI(ML):
         return result
 
     def get_pi(self):
+        """
+        Calculates the value of pi using the Leibniz formula.
+
+        Returns:
+            float: The value of pi.
+        """
         if self.PI is not None:
             return self.PI
         return calculate_pi()
-
-
+    
