@@ -172,38 +172,34 @@
     \end{algorithmic}
   \end{algorithm}
 
-\subsection{Exponent($e^x$)}
+\subsection{Power($e^x$)}
   \begin{flushleft}
-    The exponent of a number can be obtained using the following algorithm.
+    The power of a number can be obtained using the following algorithm.
   \end{flushleft}
 
   \begin{algorithm}
-    \caption{Exponent}\label{exp}
+    \caption{Power}\label{exp}
       \begin{tabbing}
         \textbf{Parameters:}\\
-          \hspace{1em}\textit{number(int):} This parameter represents the base of the exponentiation.\\
-          \hspace{1em}\textit{power(int):} An integer value that specifies how many times the number should be multiplied by itself.\\
+          \hspace{1em}\textit{base(int):} This parameter represents the base of the exponentiation.\\
+          \hspace{1em}\textit{exponent(int):} An integer value that specifies how many times the number should be multiplied by itself.\\
           
         \textbf{Returns:}\\
           \hspace{1em}\textit{int:}  A numerical value that represents the result of the exponentiation.
       \end{tabbing}
       \vspace{1 em}
-    \begin{algorithmic}
-      \Function{exp}{$number$, $power$}
-          \State $result \gets 1$
-          \While{$power > 0$}
-              \If{$power$ is odd} 
-                  \State $result \gets result \times number$
-              \EndIf
-              \State $number \gets number \times number$
-              \State $power \gets power \div 2$ 
-          \EndWhile
-          \State \textbf{return} $result$
-      \EndFunction
-      \end{algorithmic}
+      \begin{algorithmic}
+        \Procedure{Power}{$base, exponent$}
+            \If{$exponent == 0$}
+                \State \Return $1$
+            \Else
+                \State \Return $base * Power(base, exponent - 1)$
+            \EndIf
+        \EndProcedure
+      \end{algorithmic}    
   \end{algorithm}
   \begin{flushleft}
-    The above algorithm is preferred over the naive approach as it requires less number of recursive function calls.
-    The naive approach can quickly become impractical or even impossible for large exponents, as the number of multiplications required grows exponentially with the size of the exponent. The exponentiation by squaring approach, on the other hand, uses recursive halving of the exponent to reduce the number of multiplications required, making it more practical for large exponents.
+    This algorithm provides a clear and concise way of expressing a mathematical operation, such as power. The recursive algorithm for power is simple and intuitive. 
+    It can also be used to calculate power with non-integer exponents.
   \end{flushleft}
 \pagebreak
