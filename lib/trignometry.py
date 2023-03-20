@@ -10,20 +10,27 @@ from lib.math_lib import MathLib_BI, MathLib_WBI
 from lib.trignometry_abstract import Trignometry as Trig
 
 
-class TrignometryWBI(Trig):
-    def __init__(self, precision=4):
+class Trignometry:
+    def __init__(self, m_lib: MathLib, precision=4):
+        """
+        Initializes an instance of the Trignometry class with a specified MathLib object and precision value.
+
+        Args:
+        - m_lib: the MathLib object to be used for calculations
+        - precision: the number of iterations to be performed in the calculation (default is 4)
+        """
         self.precision = precision
         self.m_lib = MathLib_WBI()
 
     def sin(self, rad):
         """
-        Calculates the sin of a given angle in radians using the McLaurin series with the given precision.
+        Calculates the sine of a given angle in radians using the Maclaurin series approximation.
 
         Args:
-            rad (float): The angle in radians.
+        - rad: the angle in radians to be used for the calculation
 
         Returns:
-            float: The sin of the angle.
+        - The sine of the given angle calculated using the Maclaurin series approximation.
         """
         total_iterations = self.precision
         result = 0

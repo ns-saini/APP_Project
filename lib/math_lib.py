@@ -86,8 +86,7 @@ class MathLib_WBI(ML):
         Args:
             num (int): The number to calculate the factorial of.
 
-        Returns:
-            int: The result of the factorial operation.
+    def factorial(self, num):
         """
         if num < 0:
             raise ValueError("Factorial can't be calculated for negative numbers")
