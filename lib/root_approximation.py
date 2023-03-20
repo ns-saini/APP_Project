@@ -11,10 +11,7 @@ class RootApproximation_WBI(RootApproximation):
         self.num_terms = 100
         super().__init__()
 
-        Returns:
-            list: The root of the function.
-        """
-        x0, x1 = 0, 99
+    def get_roots(self, func, e) -> list:
         """
         Uses the secant method to approximate the root of a given function within a given tolerance.
 
@@ -43,7 +40,6 @@ class RootApproximation_WBI(RootApproximation):
 
             if step > self.num_terms:
                 raise Exception("Not convergent")
-                break
 
             if func(x2) - func(x1) > e:
                 break
