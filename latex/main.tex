@@ -3,29 +3,37 @@
 \usepackage[a4paper, total={6in, 9in}]{geometry}
 \usepackage{titlesec}
 
+% Prevents the chapter numbers from being displayed
 \titleformat{\chapter}[display]
   {\normalfont\bfseries}{}{0pt}{\Huge}
-  
+
 \makeindex
 
 \begin{document}
+  % Landing page
   \input{titlepage.tex}
 
+  % Table of Contents
   \tableofcontents{}
   \printindex{}
 
+  % Overview of the project
   \chapter{Overview}
     \input{overview.tex}
 
+  % Contents of Problem 1
   \chapter{Problem 1}
     \input{problem1.tex}
 
+  % Contents of Problem 2
   \chapter{Problem 2}
     \input{problem2.tex}
 
+  % Contents of Problem 3
   \chapter{Problem 3}
   \input{problem3.tex}
 
+  % Prints the bibtex references
   \bibliographystyle{unsrt}
   \bibliography{citation}
   \printindex
