@@ -1,6 +1,6 @@
-from lib.math_lib_abstract import MathLib as ML
+"""Abstract module for math library."""
 import math
-
+from lib.math_lib_abstract import MathLib as ML
 
 def calculate_pi():
     """
@@ -17,7 +17,8 @@ def calculate_pi():
     return 4 * val
 
 
-class MathLib_BI(ML):
+class MathLibBI(ML):
+    """Math Library class using built in functions."""
     def __init__(self) -> None:
         super().__init__(4)
 
@@ -56,9 +57,10 @@ class MathLib_BI(ML):
         return math.pi
 
 
-class MathLib_WBI(ML):
+class MathLibWBI(ML):
+    """Math Library class implementing the methods without using inbuilt libraries."""
     def __init__(self):
-        self.PI = None
+        self.pi = None
 
     def pow(self, number: float, power: int) -> float:
         """
@@ -73,11 +75,10 @@ class MathLib_WBI(ML):
         """
         if power == 0:
             return 1
-        elif power % 2 == 0:
-            temp = pow(number, power // 2) 
+        if power % 2 == 0:
+            temp = pow(number, power // 2)
             return temp * temp
-        else:
-            return number * pow(number, power - 1)
+        return number * pow(number, power - 1)
 
     def factorial(self, num: int) -> int:
         """
@@ -102,7 +103,7 @@ class MathLib_WBI(ML):
         Returns:
             float: The value of pi.
         """
-        if self.PI is not None:
-            return self.PI
+        if self.Pi is not None:
+            return self.Pi
         return calculate_pi()
     

@@ -1,19 +1,24 @@
+"""Scipy root approximation module."""
 from scipy.optimize import fsolve
 
 from lib.root_approximation_abstract import RootApproximation
 
 
-class RootApproximation_WBI(RootApproximation):
+class RootApproximationWBI(RootApproximation):
+    """RootApproximation_WBI class for calculating the root of a
+      function using the secant method."""
     def __init__(self):
         """
-        Initializes an instance of the RootApproximation class with a default value of 100 for the number of terms.
+        Initializes an instance of the RootApproximation class with a
+          default value of 100 for the number of terms.
         """
         self.num_terms = 100
         super().__init__()
 
-    def get_roots(self, func, e) -> list:
+    def get_roots(self, func, error) -> list:
         """
-        Uses the secant method to approximate the root of a given function within a given tolerance.
+        Uses the secant method to approximate the root of a given function
+        within a given tolerance.
 
         Args:
         - func: the function to be approximated
@@ -24,35 +29,38 @@ class RootApproximation_WBI(RootApproximation):
         Returns:
         - The approximation for the root of the given function within the given tolerance.
         """
-
-        x2 = 0
+        x_0 = -10000
+        x_1 = +10000
+        x_2 = 0
         step = 1
         while True:
-            if func(x0) == func(x1):
+            if func(x_0) == func(x_1):
                 break
 
-            x2 = x0 - (x1 - x0) * func(x0) / (func(x1) - func(x0))
-            print('Iteration-%d, x2 = %0.6f and f(x2) = %0.6f' % (step, x2, func(x2)))
+            x_2 = x_0 - (x_1 - x_0) * func(x_0) / (func(x_1) - func(x_0))
+            print(f'Iteration-{step}, x2 = {x_2:.6f} and f(x2) = {func(x_2):.6f}')
 
-            x0 = x1
-            x1 = x2
+            x_0 = x_1
+            x_1 = x_2
             step += 1
 
             if step > self.num_terms:
                 raise Exception("Not convergent")
 
-            if func(x2) - func(x1) > e:
+            if func(x_2) - func(x_1) > error:
                 break
 
-        return [x2]
+        return [x_2]
 
 
-class RootApproximation_BI(RootApproximation):
+class RootApproximationBI(RootApproximation):
+    """RootApproximation_BI class for calculating the root of a
+      function using the `fsolve` method."""
     def __init__(self) -> None:
         super().__init__()
         self.num_terms = 100
 
-    def get_roots(self, func, e) -> list:
+    def get_roots(self, func, error) -> list:
         """
         Calculates the root of a given function using the `fsolve` method.
 
@@ -65,3 +73,4 @@ class RootApproximation_BI(RootApproximation):
         """
         root = fsolve(func, 0)
         return root
+    
