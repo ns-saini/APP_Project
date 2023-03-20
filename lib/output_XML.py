@@ -1,6 +1,15 @@
 import xml.etree.ElementTree as ET
 from lib.controller import Coaster
 
+
+dtd = '''<!DOCTYPE root [
+    <!ELEMENT root (element*)>
+    <!ELEMENT element (radius, output)>
+    <!ELEMENT radius (#PCDATA)>
+    <!ELEMENT output (#PCDATA)>
+]>'''
+
+
 class XMLHandler:
     def process_data(self, output_file):
         # Create an instance of the Coaster class
@@ -29,4 +38,4 @@ class XMLHandler:
 
         # Create the ElementTree object and write it to a file
         output_tree = ET.ElementTree(output_root)
-        output_tree.write(output_file, xml_declaration=True, encoding="utf-8", method="xml")
+        output_tree.write(output_file, xml_declaration=True, encoding="utf-8", method="xml", , doctype=dtd)
