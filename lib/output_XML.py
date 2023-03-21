@@ -1,5 +1,5 @@
 import xml.etree.ElementTree as ET
-from lib.controller import Coaster
+from controller import Controller
 
 
 dtd = '''<!DOCTYPE root [
@@ -9,6 +9,8 @@ dtd = '''<!DOCTYPE root [
     <!ELEMENT output (#PCDATA)>
 ]>'''
 
+radius = float(input("Enter the radius: "))
+coaster = Controller(radius=radius)
 
 class XMLHandler:
     def process_data(self, output_file):
@@ -23,7 +25,6 @@ class XMLHandler:
         """
         # Create an instance of the Coaster class
         # I can just read the inputs from a function in controller
-        coaster = Coaster()
 
         # Create the root element of the XML output tree
         output_root = ET.Element("root")
@@ -39,7 +40,7 @@ class XMLHandler:
             radius_elem.text = str(radius)
 
             # Invoke the get_length method and get the result
-            length = Coaster.get_length(radius)
+            length = Coaster.calculate_length_WBI(radius)
 
             # Create an "output" element and add it to the "element" element
             output_elem = ET.SubElement(element_elem, "output")
