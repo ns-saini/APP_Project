@@ -9,7 +9,7 @@ dtd = '''<!DOCTYPE root [
     <!ELEMENT output (#PCDATA)>
 ]>'''
 
-radius = float(input("Enter the radius: "))
+radius_values = float(input("Enter the radius: "))
 coaster = Controller(radius=radius)
 
 class XMLHandler:
@@ -30,7 +30,6 @@ class XMLHandler:
         output_root = ET.Element("root")
 
         # Loop through the radius values to process
-        radius_values = ctrl.get_input()  
         for radius in radius_values:
             # Create an "element" element and add it to the output tree
             element_elem = ET.SubElement(output_root, "element")
