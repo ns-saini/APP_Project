@@ -1,14 +1,15 @@
 from lib import math_lib
 from lib import root_approximation
 from lib import trignometry
+from lib import input_validator
 
 class Controller:
-    def __init__(self, radius):
-        self.radius = radius
-        # self.radius = float(input("Enter the radius: "))
+    # def __init__(self, radius):
+    #     self.radius = radius
+    #     # self.radius = float(input("Enter the radius: "))
         
-        if self.radius <= 0:
-            raise ValueError("Radius must be positive")
+    #     if self.radius <= 0:
+    #         raise ValueError("Radius must be positive")
 
 
 
@@ -45,7 +46,9 @@ class Controller:
         length = 2 * self.radius * (1 - trigo_b.cos(alpha/2))
         print("The length with BI is :" + str(length))
         
-radius = float(input("Enter the radius: "))
-controller = Controller(radius=radius)
+# radius = float(input("Enter the radius: "))
+radius = float(input_validator.validate_input())
+controller = Controller()
+controller.radius = radius
 length_wbi = controller.calculate_length_WBI()
 length_bi = controller.calculate_length_BI()
