@@ -17,7 +17,6 @@ class Controller:
         rootapprox_wb = RootApproximation_WBI()
         trigo_wb = TrignometryWBI(precision=4)
         maths_wb=MathLib_WBI()
-        print("ndjwdn")
         
 
         
