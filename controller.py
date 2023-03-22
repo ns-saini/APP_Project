@@ -1,6 +1,6 @@
-from lib.math_lib import *
-from lib.root_approximation import *
-from lib.trignometry import*
+from lib import math_lib
+from lib import root_approximation
+from lib import trignometry
 
 class Controller:
     def __init__(self, radius):
@@ -14,9 +14,9 @@ class Controller:
 
     def calculate_length_WBI(self):
 
-        rootapprox_wb = RootApproximation_WBI()
-        trigo_wb = TrignometryWBI(precision=4)
-        maths_wb=MathLib_WBI()
+        rootapprox_wb = root_approximation.RootApproximationWBI()
+        trigo_wb = trignometry.TrignometryBI(precision=4)
+        maths_wb=math_lib.MathLibWBI()
         
 
         
@@ -33,9 +33,9 @@ class Controller:
     def calculate_length_BI(self):
 
 
-        rootapprox_b = RootApproximation_BI()
-        maths_b = MathLib_BI()
-        trigo_b = TrignometryBI(precision=4)
+        rootapprox_b = root_approximation.RootApproximationBI()
+        maths_b = math_lib.MathLibBI()
+        trigo_b = trignometry.TrignometryBI(precision=4)
         funct_b = lambda x: x ** 2 + trigo_b.sin(x) - 2
         alpha = rootapprox_b.get_roots(funct_b, 0.00001)
         alpha = maths_b.get_pi()/2 + trigo_b.sin(alpha[0])
