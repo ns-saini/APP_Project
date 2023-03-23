@@ -13,3 +13,7 @@ class RootApproximation(ABC):
     @abstractmethod
     def get_roots(self, func, error) -> list:
         """Abstract method for get_roots."""
+
+    @abstractmethod
+    def temp_method(self):
+        """Temporary method"""

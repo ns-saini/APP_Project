@@ -47,18 +47,18 @@ class RootApproximationWBI(RootApproximation):
             step += 1
 
             if step > self.num_terms:
-                raise Exception("Not convergent")
+                raise RuntimeError("Not convergent")
 
             if func(x_2) - func(x_1) > error:
                 break
 
         return [x_2]
 
-    def temporary_method(self):
+    def temp_method(self):
         '''
-            This is a temporary method
+            ...
         '''
-        a_var = ''
+        print('This is a temporary method')
 
 
 
@@ -84,8 +84,8 @@ class RootApproximationBI(RootApproximation):
         root = fsolve(func, 0)
         return root
 
-    def temporary_method(self):
+    def temp_method(self):
         '''
-            This is a temporary method
+            ...
         '''
-        a_var = ''
+        print('This is a temporary method')

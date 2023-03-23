@@ -46,7 +46,13 @@ class XMLHandler:
         # output_tree = ET.ElementTree(output_root)
         # output_tree.write(output_file, xml_declaration=True,
         #                   encoding="utf-8", method="xml", doctype=DTD)
+        print(output_file)
 
+    def temp_method(self):
+        '''
+            ...
+        '''
+        print('This is a temporary method')
 
 
 DTD = '''<!DOCTYPE root [
@@ -59,4 +65,3 @@ DTD = '''<!DOCTYPE root [
 # radius_values = float(input("Enter the radius: "))
 coaster = Controller()
 radius = coaster.radius
-
