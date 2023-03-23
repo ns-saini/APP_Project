@@ -5,7 +5,7 @@ from lib import math_lib
 from lib import root_approximation
 from lib import trignometry
 from lib import input_validator
-
+from lib import output_xml_generator
 
 class Controller:
     """
@@ -56,5 +56,7 @@ class Controller:
 
 radius = float(input_validator.validate_input())
 controller = Controller()
-controller.calculate_length_wbi()
+length = controller.calculate_length_wbi()
+xml_handler = XMLHandler(radius, length)
+xml_handler.process_data()
 controller.calculate_length_bi()
