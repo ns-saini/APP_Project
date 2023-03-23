@@ -8,8 +8,10 @@ class XMLHandler:
     '''
         XML Handler
     '''
-
-    def process_data(self, output_file):
+    def __init__(self, input_ctrl, output_file):
+        self.input_ctrl = input_ctrl
+        self.output_file = output_file
+    def process_data(self):
         """
         Generates an XML output file containing radius and corresponding length of a coaster track.
 
@@ -26,7 +28,7 @@ class XMLHandler:
         output_root = ET.Element("root")
 
         # Loop through the radius values to process
-        # for radius in radius_values:
+        for radius in self.input_ctrl:
         # Create an "element" element and add it to the output tree
         element_elem = ET.SubElement(output_root, "element")
 
@@ -34,19 +36,16 @@ class XMLHandler:
         radius_elem = ET.SubElement(element_elem, "radius")
         radius_elem.text = str(radius)
 
-        # Invoke the get_length method and get the result
-        length = 0
-        # Controller.calculate_length_wbi()
 
         # Create an "output" element and add it to the "element" element
         output_elem = ET.SubElement(element_elem, "output")
         output_elem.text = str(length)
 
         # Create the ElementTree object and write it to a file
-        # output_tree = ET.ElementTree(output_root)
-        # output_tree.write(output_file, xml_declaration=True,
+        output_tree = ET.ElementTree(output_root)
+        output_tree.write(self.output_file, xml_declaration=True,
         #                   encoding="utf-8", method="xml", doctype=DTD)
-        print(output_file)
+        print(self.output_file)
 
     def temp_method(self):
         '''
@@ -62,6 +61,4 @@ DTD = '''<!DOCTYPE root [
     <!ELEMENT output (#PCDATA)>
 ]>'''
 
-# radius_values = float(input("Enter the radius: "))
-coaster = Controller()
-radius = coaster.radius
+
