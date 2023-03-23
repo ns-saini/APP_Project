@@ -7,6 +7,7 @@ from lib.root_approximation_abstract import RootApproximation
 class RootApproximationWBI(RootApproximation):
     """RootApproximation_WBI class for calculating the root of a
       function using the secant method."""
+
     def __init__(self):
         """
         Initializes an instance of the RootApproximation class with a
@@ -38,7 +39,8 @@ class RootApproximationWBI(RootApproximation):
                 break
 
             x_2 = x_0 - (x_1 - x_0) * func(x_0) / (func(x_1) - func(x_0))
-            print(f'Iteration-{step}, x2 = {x_2:.6f} and f(x2) = {func(x_2):.6f}')
+            print(
+                f'Iteration-{step}, x2 = {x_2:.6f} and f(x2) = {func(x_2):.6f}')
 
             x_0 = x_1
             x_1 = x_2
@@ -52,10 +54,18 @@ class RootApproximationWBI(RootApproximation):
 
         return [x_2]
 
+    def temporary_method(self):
+        '''
+            This is a temporary method
+        '''
+        a_var = ''
+
+
 
 class RootApproximationBI(RootApproximation):
     """RootApproximation_BI class for calculating the root of a
       function using the `fsolve` method."""
+
     def __init__(self) -> None:
         super().__init__()
         self.num_terms = 100
@@ -73,4 +83,9 @@ class RootApproximationBI(RootApproximation):
         """
         root = fsolve(func, 0)
         return root
-    
+
+    def temporary_method(self):
+        '''
+            This is a temporary method
+        '''
+        a_var = ''

@@ -60,7 +60,8 @@ class MathLibBI(ML):
 class MathLibWBI(ML):
     """Math Library class implementing the methods without using inbuilt libraries."""
     def __init__(self):
-        self.pi = None
+        self.pi_value = None
+        super().__init__(4)
 
     def pow(self, number: float, power: int) -> float:
         """
@@ -80,7 +81,7 @@ class MathLibWBI(ML):
             return temp * temp
         return number * pow(number, power - 1)
 
-    def factorial(self, num: int) -> int:
+    def factorial(self, number: int) -> int:
         """
         Calculates the factorial of a given number using the iterative method.
 
@@ -89,10 +90,10 @@ class MathLibWBI(ML):
 
     def factorial(self, num):
         """
-        if num < 0:
+        if number < 0:
             raise ValueError("Factorial can't be calculated for negative numbers")
         result = 1
-        for i in range(1, num + 1):
+        for i in range(1, number + 1):
             result *= i
         return result
 
@@ -103,7 +104,7 @@ class MathLibWBI(ML):
         Returns:
             float: The value of pi.
         """
-        if self.pi is not None:
-            return self.pi
+        if self.pi_value is not None:
+            return self.pi_value
         return calculate_pi()
     

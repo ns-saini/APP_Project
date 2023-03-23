@@ -40,11 +40,11 @@ def validate_input():
     # return tol, x0, x1
 
     while True:
-            try:
-                radius = float(input("Please enter a value for the radius of the coaster (e.g. 20): "))
-                if radius <= 0:
-                    raise ValueError
-                break
-            except ValueError:
-                print("Invalid input. Please enter a positive number.")
+        try:
+            radius = float(input("Please enter a value for the radius of the coaster (e.g. 20): "))
+            if radius <= 0:
+                raise ValueError
+            break
+        except ValueError:
+            print("Invalid input. Please enter a positive number.")
     return radius

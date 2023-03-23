@@ -4,18 +4,6 @@
 import xml.etree.ElementTree as ET
 from controller import Controller
 
-
-DTD = '''<!DOCTYPE root [
-    <!ELEMENT root (element*)>
-    <!ELEMENT element (radius, output)>
-    <!ELEMENT radius (#PCDATA)>
-    <!ELEMENT output (#PCDATA)>
-]>'''
-
-radius_values = float(input("Enter the radius: "))
-coaster = Controller()
-
-
 class XMLHandler:
     '''
         XML Handler
@@ -38,22 +26,37 @@ class XMLHandler:
         output_root = ET.Element("root")
 
         # Loop through the radius values to process
-        for radius in radius_values:
-            # Create an "element" element and add it to the output tree
-            element_elem = ET.SubElement(output_root, "element")
+        # for radius in radius_values:
+        # Create an "element" element and add it to the output tree
+        element_elem = ET.SubElement(output_root, "element")
 
-            # Create a "radius" element and add it to the "element" element
-            radius_elem = ET.SubElement(element_elem, "radius")
-            radius_elem.text = str(radius)
+        # Create a "radius" element and add it to the "element" element
+        radius_elem = ET.SubElement(element_elem, "radius")
+        radius_elem.text = str(radius)
 
-            # Invoke the get_length method and get the result
-            length = Coaster.calculate_length_WBI(radius)
+        # Invoke the get_length method and get the result
+        length = 0
+        # Controller.calculate_length_wbi()
 
-            # Create an "output" element and add it to the "element" element
-            output_elem = ET.SubElement(element_elem, "output")
-            output_elem.text = str(length)
+        # Create an "output" element and add it to the "element" element
+        output_elem = ET.SubElement(element_elem, "output")
+        output_elem.text = str(length)
 
         # Create the ElementTree object and write it to a file
-        output_tree = ET.ElementTree(output_root)
-        output_tree.write(output_file, xml_declaration=True,
-                          encoding="utf-8", method="xml", doctype=DTD)
+        # output_tree = ET.ElementTree(output_root)
+        # output_tree.write(output_file, xml_declaration=True,
+        #                   encoding="utf-8", method="xml", doctype=DTD)
+
+
+
+DTD = '''<!DOCTYPE root [
+    <!ELEMENT root (element*)>
+    <!ELEMENT element (radius, output)>
+    <!ELEMENT radius (#PCDATA)>
+    <!ELEMENT output (#PCDATA)>
+]>'''
+
+# radius_values = float(input("Enter the radius: "))
+coaster = Controller()
+radius = coaster.radius
+
