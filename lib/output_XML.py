@@ -1,8 +1,11 @@
+'''
+    XML generator
+'''
 import xml.etree.ElementTree as ET
 from controller import Controller
 
 
-dtd = '''<!DOCTYPE root [
+DTD = '''<!DOCTYPE root [
     <!ELEMENT root (element*)>
     <!ELEMENT element (radius, output)>
     <!ELEMENT radius (#PCDATA)>
@@ -10,9 +13,14 @@ dtd = '''<!DOCTYPE root [
 ]>'''
 
 radius_values = float(input("Enter the radius: "))
-coaster = Controller(radius=radius)
+coaster = Controller()
+
 
 class XMLHandler:
+    '''
+        XML Handler
+    '''
+
     def process_data(self, output_file):
         """
         Generates an XML output file containing radius and corresponding length of a coaster track.
@@ -47,4 +55,5 @@ class XMLHandler:
 
         # Create the ElementTree object and write it to a file
         output_tree = ET.ElementTree(output_root)
-        output_tree.write(output_file, xml_declaration=True, encoding="utf-8", method="xml", doctype=dtd)
+        output_tree.write(output_file, xml_declaration=True,
+                          encoding="utf-8", method="xml", doctype=DTD)
