@@ -35,6 +35,7 @@ class Controller:
         alpha = maths_wb.get_pi()/2 + trigo_wb.sin(alpha[0])
         length = 2 * self.radius * (1 - trigo_wb.cos(alpha/2))
         print("The length with WBI is :" + str(length))
+        return length
 
     def calculate_length_bi(self):
         """
@@ -54,9 +55,17 @@ class Controller:
         print("The length with BI is :" + str(length))
 
 
+# radius = float(input_validator.validate_input())
+# controller = Controller()
+# length = controller.calculate_length_wbi()
+# xml_handler = XMLHandler(radius, length)
+# xml_handler.process_data()
+# controller.calculate_length_bi()
+
 radius = float(input_validator.validate_input())
 controller = Controller()
 length = controller.calculate_length_wbi()
-xml_handler = XMLHandler(radius, length)
-xml_handler.process_data()
+xml_handler = output_xml_generator.XMLHandler(radius, length)
+Kajal =xml_handler.process_data()
+print(Kajal)
 controller.calculate_length_bi()
