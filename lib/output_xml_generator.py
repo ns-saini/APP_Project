@@ -51,7 +51,7 @@ class XMLHandler:
 
         # Create the ElementTree object and write it to a file
         output_tree = ET.ElementTree(output_root)
-        output_tree.write(str(self.output_file), xml_declaration=True,
+        output_tree.write('output.xml', xml_declaration=True,
                           encoding="utf-8", method="xml")
 
         return self.output_file
