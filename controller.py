@@ -55,13 +55,6 @@ class Controller:
         print("The length with BI is :" + str(length))
 
 
-# radius = float(input_validator.validate_input())
-# controller = Controller()
-# length = controller.calculate_length_wbi()
-# xml_handler = XMLHandler(radius, length)
-# xml_handler.process_data()
-# controller.calculate_length_bi()
-
 radius = float(input_validator.validate_input())
 controller = Controller()
 length = controller.calculate_length_wbi()
