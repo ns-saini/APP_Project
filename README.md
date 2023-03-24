@@ -1,4 +1,30 @@
-# To run the LaTeX project (on VS Code)
+# To run the project
+- Use the package manager pip to install dependencies
+- Execute the main function
+
+## Installation
+
+```bash
+pip install scipy
+```
+
+## Execution
+
+```python
+python main.py
+```
+## Output
+
+Output will be displayed through
+- The console in textual format
+- An output.xml file
+
+## License
+
+[MIT](https://choosealicense.com/licenses/mit/)
+
+
+## To run the LaTeX project (on VS Code)
 
 1) Install TeX Live on Windows
     https://www.tug.org/texlive/
