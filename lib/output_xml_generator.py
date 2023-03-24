@@ -56,11 +56,7 @@ class XMLHandler:
 
         return self.output_file
     
-    def temp_method(self):
-        '''
-            ...
-        '''
-        print('This is a temporary method')
+
 
 
 
