@@ -1,32 +1,16 @@
 '''
     XML generator
 '''
+from lib.output_xml_generator_abstract import XMLHandler
 import xml.etree.ElementTree as ET
 
-class XMLHandler:
-    '''
-        XML Handler
-    '''
-    def __init__(self, input_ctrl, output_file):
-        self.input_ctrl = input_ctrl
-        self.output_file = output_file
+class MyXMLHandler(XMLHandler):
+    """
+    Concrete implementation of XML handler.
+    """
 
     def process_data(self):
-        """
-        Generates an XML output file containing radius and corresponding length of a coaster track.
-
-        Args:
-        - output_file: the name of the output file to be created
-
-        Returns:
-        - None
-        """
-        # Create an instance of the Coaster class
-        # I can just read the inputs from a function in controller
-
         # Create the root element of the XML output tree
-
-
         output_root = ET.Element("root")
         DTD = '''<!DOCTYPE root [
             <!ELEMENT root (element*)>

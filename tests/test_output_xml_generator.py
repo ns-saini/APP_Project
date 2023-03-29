@@ -3,7 +3,6 @@ import unittest
 import os
 from xml.dom import minidom
 import xml.etree.ElementTree as ET
-from lib import output_xml_generator
 
 # class TestXMLHandler(unittest.TestCase):
 #     def test_process_data(self):
