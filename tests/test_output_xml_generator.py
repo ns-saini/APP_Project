@@ -1,3 +1,4 @@
+from lib import output_xml_generator
 import unittest
 import os
 from xml.dom import minidom
