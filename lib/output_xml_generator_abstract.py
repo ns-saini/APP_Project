@@ -7,9 +7,8 @@ class XMLHandler(abc.ABC):
     Abstract base class for XML handler.
     """
 
-    def __init__(self, input_ctrl, output_file):
-        self.input_ctrl = input_ctrl
-        self.output_file = output_file
+    def __init__(self):
+        
         super().__init__()
 
     @abc.abstractmethod
@@ -17,8 +16,4 @@ class XMLHandler(abc.ABC):
         """
         Abstract method that generates an XML output file.
         """
-
-class MyXMLHandler(XMLHandler):
-    """
-    Concrete implementation of XML handler.
-    """
+        pass

@@ -58,6 +58,6 @@ class Controller:
 radius = float(input_validator.validate_input())
 controller = Controller()
 length = controller.calculate_length_wbi()
-xml_handler = output_xml_generator.XMLHandler(radius, length)
+xml_handler = output_xml_generator.MyXMLHandler(radius, length)
 xml_handler.process_data()
 controller.calculate_length_bi()

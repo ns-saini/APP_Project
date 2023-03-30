@@ -8,7 +8,11 @@ class MyXMLHandler(XMLHandler):
     """
     Concrete implementation of XML handler.
     """
-
+    
+    def __init__(self, input_ctrl, output_file):
+        self.input_ctrl = input_ctrl
+        self.output_file = output_file
+        super().__init__()
     def process_data(self):
         # Create the root element of the XML output tree
         output_root = ET.Element("root")
@@ -39,7 +43,7 @@ class MyXMLHandler(XMLHandler):
                           encoding="utf-8", method="xml")
 
         return self.output_file
-    
+        
 
 
 
