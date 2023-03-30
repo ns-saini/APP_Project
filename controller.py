@@ -53,6 +53,7 @@ class Controller:
         alpha = maths_b.get_pi()/2 + trigo_b.sin(alpha[0])
         length = 2 * self.radius * (1 - trigo_b.cos(alpha/2))
         print("The length with BI is :" + str(length))
+        return length
 
 
 radius = float(input_validator.validate_input())
