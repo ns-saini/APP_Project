@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Python: module trignometry</title>
+</head><body>
+
+<table class="heading">
+<tr class="heading-text decor">
+<td class="title">&nbsp;<br><strong class="title">trignometry</strong></td>
+<td class="extra"><a href=".">index</a><br><a href="file:c%3A%5Cusers%5Cadmin%5Cdesktop%5Capp_assignment%5Capp_project%5Clib%5Ctrignometry.py">c:\users\admin\desktop\app_assignment\app_project\lib\trignometry.py</a></td></tr></table>
+    <p><span class="code">Math&nbsp;module&nbsp;for&nbsp;inbuilt&nbsp;math&nbsp;functions.</span></p>
+<p>
+<table class="section">
+<tr class="decor pkg-content-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Modules</strong></td></tr>
+    
+<tr><td class="decor pkg-content-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><table><tr><td class="multicolumn"><a href="math.html">math</a><br>
+</td><td class="multicolumn"></td><td class="multicolumn"></td><td class="multicolumn"></td></tr></table></td></tr></table><p>
+<table class="section">
+<tr class="decor index-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Classes</strong></td></tr>
+    
+<tr><td class="decor index-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><dl>
+<dt class="heading-text"><a href="builtins.html#object">builtins.object</a>
+</dt><dd>
+<dl>
+<dt class="heading-text"><a href="trignometry.html#Trignometry">Trignometry</a>
+</dt></dl>
+</dd>
+<dt class="heading-text"><a href="lib.trignometry_abstract.html#Trignometry">lib.trignometry_abstract.Trignometry</a>(<a href="abc.html#ABC">abc.ABC</a>)
+</dt><dd>
+<dl>
+<dt class="heading-text"><a href="trignometry.html#TrignometryBI">TrignometryBI</a>
+</dt></dl>
+</dd>
+</dl>
+ <p>
+<table class="section">
+<tr class="decor title-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><a name="Trignometry">class <strong>Trignometry</strong></a>(<a href="builtins.html#object">builtins.object</a>)</td></tr>
+    
+<tr><td class="decor title-decor" rowspan=2><span class="code">&nbsp;&nbsp;&nbsp;</span></td>
+<td class="decor title-decor" colspan=2><span class="code"><a href="#Trignometry">Trignometry</a>(precision=4)<br>
+&nbsp;<br>
+<a href="#Trignometry">Trignometry</a>&nbsp;class&nbsp;for&nbsp;calculating&nbsp;the&nbsp;sine&nbsp;and&nbsp;cosine&nbsp;of&nbsp;an&nbsp;angle&nbsp;using&nbsp;the&nbsp;Maclaurin&nbsp;series.<br>&nbsp;</span></td></tr>
+<tr><td>&nbsp;</td>
+<td class="singlecolumn">Methods defined here:<br>
+<dl><dt><a name="Trignometry-__init__"><strong>__init__</strong></a>(self, precision=4)</dt><dd><span class="code">Initializes&nbsp;an&nbsp;instance&nbsp;of&nbsp;the&nbsp;<a href="#Trignometry">Trignometry</a>&nbsp;class&nbsp;with&nbsp;a<br>
+specified&nbsp;MathLib&nbsp;<a href="builtins.html#object">object</a>&nbsp;and&nbsp;precision&nbsp;value.<br>
+&nbsp;<br>
+Args:<br>
+-&nbsp;m_lib:&nbsp;the&nbsp;MathLib&nbsp;<a href="builtins.html#object">object</a>&nbsp;to&nbsp;be&nbsp;used&nbsp;for&nbsp;calculations<br>
+-&nbsp;precision:&nbsp;the&nbsp;number&nbsp;of&nbsp;iterations&nbsp;to&nbsp;be&nbsp;performed<br>
+&nbsp;&nbsp;in&nbsp;the&nbsp;calculation&nbsp;(default&nbsp;is&nbsp;4)</span></dd></dl>
+
+<dl><dt><a name="Trignometry-cos"><strong>cos</strong></a>(self, rad: float) -&gt; float</dt><dd><span class="code">Calculates&nbsp;the&nbsp;cos&nbsp;of&nbsp;a&nbsp;given&nbsp;angle&nbsp;in&nbsp;radians&nbsp;using&nbsp;the<br>
+McLaurin&nbsp;series&nbsp;with&nbsp;the&nbsp;given&nbsp;precision.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;rad&nbsp;(float):&nbsp;The&nbsp;angle&nbsp;in&nbsp;radians.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;float:&nbsp;The&nbsp;cos&nbsp;of&nbsp;the&nbsp;angle.</span></dd></dl>
+
+<dl><dt><a name="Trignometry-sin"><strong>sin</strong></a>(self, rad)</dt><dd><span class="code">Calculates&nbsp;the&nbsp;sine&nbsp;of&nbsp;a&nbsp;given&nbsp;angle&nbsp;in&nbsp;radians&nbsp;using&nbsp;the&nbsp;Maclaurin&nbsp;series&nbsp;approximation.<br>
+&nbsp;<br>
+Args:<br>
+-&nbsp;rad:&nbsp;the&nbsp;angle&nbsp;in&nbsp;radians&nbsp;to&nbsp;be&nbsp;used&nbsp;for&nbsp;the&nbsp;calculation<br>
+&nbsp;<br>
+Returns:<br>
+-&nbsp;The&nbsp;sine&nbsp;of&nbsp;the&nbsp;given&nbsp;angle&nbsp;calculated&nbsp;using&nbsp;the&nbsp;Maclaurin&nbsp;series&nbsp;approximation.</span></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><span class="code">dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</span></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><span class="code">list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</span></dd>
+</dl>
+</td></tr></table> <p>
+<table class="section">
+<tr class="decor title-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><a name="TrignometryBI">class <strong>TrignometryBI</strong></a>(<a href="lib.trignometry_abstract.html#Trignometry">lib.trignometry_abstract.Trignometry</a>)</td></tr>
+    
+<tr><td class="decor title-decor" rowspan=2><span class="code">&nbsp;&nbsp;&nbsp;</span></td>
+<td class="decor title-decor" colspan=2><span class="code"><a href="#TrignometryBI">TrignometryBI</a>(precision=4)<br>
+&nbsp;<br>
+<a href="#Trignometry">Trignometry</a>&nbsp;class&nbsp;for&nbsp;calculating&nbsp;the&nbsp;sine&nbsp;and&nbsp;cosine&nbsp;of&nbsp;an&nbsp;angle<br>
+&nbsp;&nbsp;using&nbsp;the&nbsp;built-in&nbsp;`math`&nbsp;library.<br>&nbsp;</span></td></tr>
+<tr><td>&nbsp;</td>
+<td class="singlecolumn"><dl><dt>Method resolution order:</dt>
+<dd><a href="trignometry.html#TrignometryBI">TrignometryBI</a></dd>
+<dd><a href="lib.trignometry_abstract.html#Trignometry">lib.trignometry_abstract.Trignometry</a></dd>
+<dd><a href="abc.html#ABC">abc.ABC</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="TrignometryBI-__init__"><strong>__init__</strong></a>(self, precision=4)</dt><dd><span class="code">Initializes&nbsp;an&nbsp;instance&nbsp;of&nbsp;the&nbsp;<a href="#TrignometryBI">TrignometryBI</a>&nbsp;class&nbsp;with&nbsp;a&nbsp;specified&nbsp;precision&nbsp;value.</span></dd></dl>
+
+<dl><dt><a name="TrignometryBI-cos"><strong>cos</strong></a>(self, rad: float) -&gt; float</dt><dd><span class="code">Calculates&nbsp;the&nbsp;cos&nbsp;of&nbsp;a&nbsp;given&nbsp;angle&nbsp;in&nbsp;radians&nbsp;using&nbsp;the&nbsp;built-in&nbsp;`math`&nbsp;library.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;rad&nbsp;(float):&nbsp;The&nbsp;angle&nbsp;in&nbsp;radians.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;float:&nbsp;The&nbsp;cos&nbsp;of&nbsp;the&nbsp;angle.</span></dd></dl>
+
+<dl><dt><a name="TrignometryBI-sin"><strong>sin</strong></a>(self, rad: float) -&gt; float</dt><dd><span class="code">Calculates&nbsp;the&nbsp;sin&nbsp;of&nbsp;a&nbsp;given&nbsp;angle&nbsp;in&nbsp;radians&nbsp;using&nbsp;the&nbsp;built-in&nbsp;`math`&nbsp;library.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;rad&nbsp;(float):&nbsp;The&nbsp;angle&nbsp;in&nbsp;radians.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;float:&nbsp;The&nbsp;sin&nbsp;of&nbsp;the&nbsp;angle.</span></dd></dl>
+
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>__abstractmethods__</strong> = frozenset()</dl>
+
+<hr>
+Data descriptors inherited from <a href="lib.trignometry_abstract.html#Trignometry">lib.trignometry_abstract.Trignometry</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><span class="code">dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</span></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><span class="code">list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</span></dd>
+</dl>
+</td></tr></table></td></tr></table>
+</body></html>
