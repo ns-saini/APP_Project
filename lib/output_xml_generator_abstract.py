@@ -1,6 +1,5 @@
 """Abstract class for generating an XML output file."""
 import abc
-import xml.etree.ElementTree as ET
 
 class XMLHandler(abc.ABC):
     """
@@ -16,4 +15,4 @@ class XMLHandler(abc.ABC):
         """
         Abstract method that generates an XML output file.
         """
-        pass
+    
