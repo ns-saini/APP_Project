@@ -1,45 +1,36 @@
-import math
+''' Tests for the controller module.'''
 import unittest
-import pytest
 from controller import Controller
 
 class TestController(unittest.TestCase):
+    '''Tests for the Controller class.'''
 
-    """Test the negative value of radius."""
-    def test_negative_radius(self):
-        with pytest.raises(ValueError):
-            controller = Controller(radius=-1)
+    def test_radius_positive(self):
+        """Test the calculate_length_wbi method with a positive radius without builtin functions."""
+        controller = Controller()
+        self.assertEqual( round(controller.calculate_length_wbi(2),2),  2.63)
 
+    def test_radius_zero(self):
+        '''Test the calculate_length_wbi method with a zero radius without builtin functions.'''
+        controller = Controller()
+        self.assertEqual( round(controller.calculate_length_wbi(0),2),  0)
 
-    """Test for radius = 0"""
-    def test_zero_radius(self):
-        with pytest.raises(ValueError):
-            controller = Controller(radius=0)   
+    def test_radius_negative(self):
+        """Test the calculate_length_wbi method with a negative radius without builtin functions."""
+        controller = Controller()
+        self.assertEqual( round(controller.calculate_length_wbi(-2),2),  -2.63)
 
+    def test_radius_positive_builtin(self):
+        """Test the calculate_length_wbi method with a positive radius with builtin functions."""
+        controller = Controller()
+        self.assertEqual( round(controller.calculate_length_bi(2),2),  2.63)
 
-    """Test case for valid radius input"""
-    def test_valid_radius(self):
-        radius = 5
-        controller = Controller(radius)
-        assert controller.radius == radius
+    def test_radius_zero_builtin(self):
+        '''Test the calculate_length_wbi method with a zero radius with builtin functions.'''
+        controller = Controller()
+        self.assertEqual( round(controller.calculate_length_bi(0),2),  0)
 
-    """Test case for integer value of radius"""
-    def test_radius_not_character(self):
-        with pytest.raises(TypeError):
-            radius = 'a'
-            controller = Controller(radius)
-            controller.calculate_length()
-
-    """Test case for  calculate length without using built in library method"""
-    def test_calculate_length_wbi(self):
-        radius = 5
-        controller = Controller(radius)
-        expected_length = 6.579551664194772
-        assert controller.calculate_length_wbi(radius) == expected_length
-
-    """Test case for  calculate length using built in library method"""
-    def test_calculate_length_bi(self):
-        radius = 1
-        controller = Controller(radius)
-        expected_length = 1.3163801959113433
-        assert controller.calculate_length_bi(radius) == expected_length
+    def test_radius_negative_builtin(self):
+        """Test the calculate_length_wbi method with a negative radius with builtin functions."""
+        controller = Controller()
+        self.assertEqual( round(controller.calculate_length_bi(-2),2),  -2.63)

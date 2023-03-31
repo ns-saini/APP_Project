@@ -4,34 +4,19 @@
 from lib import math_lib
 from lib import root_approximation
 from lib import trignometry
-from lib import input_validator
-from lib import output_xml_generator
 
 
 class Controller:
     """
-    Controller class    
+    Controller class for calculating the length of the chord between the two circles of radius r
     """
-    
-    def __init__(self, radius):
-        #pass
-        # global rad
-        
-        if radius <= 0:
-            raise ValueError("Radius must be a positive number")
-        
-        self.radius = radius
-        # rad = self.radius
+    def __init__(self):
+        self.temp = 0
 
-        # # self.radius = float(input("Enter the radius: "))
-
-        # if self.radius <= 0:
-        #     raise ValueError("Radius must be positive")
-
-
-    def calculate_length_wbi(self, radius):
+    @staticmethod
+    def calculate_length_wbi(radius):
         """
-        calculate_length_WBI    
+        calculate_length_WBI method for calculating length without Builtin functions
         """
 
         rootapprox_wb = root_approximation.RootApproximationWBI()
@@ -47,10 +32,10 @@ class Controller:
         print("The length with WBI is :" + str(length))
         return length
 
-
-    def calculate_length_bi(self, radius):
+    @staticmethod
+    def calculate_length_bi(radius):
         """
-        calculate_length_BI    
+        calculate_length_BI method for calculating length with Builtin functions
         """
 
         rootapprox_b = root_approximation.RootApproximationBI()
@@ -65,8 +50,3 @@ class Controller:
         length = 2 * radius * (1 - trigo_b.cos(alpha/2))
         print("The length with BI is :" + str(length))
         return length
-
-
-#radius = float(input_validator.validate_input())
-#controller = Controller(radius)
-

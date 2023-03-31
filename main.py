@@ -9,7 +9,7 @@ def main():
     '''
     main method
     '''
-    
+
     radius = float(input_validator.validate_input())
     controller = ct.Controller(radius)
     length = controller.calculate_length_wbi(radius)
@@ -20,4 +20,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-    
