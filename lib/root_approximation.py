@@ -30,8 +30,8 @@ class RootApproximationWBI(RootApproximation):
         Returns:
         - The approximation for the root of the given function within the given tolerance.
         """
-        x_0 = -10000
-        x_1 = +10000
+        x_0 = -1000.01
+        x_1 = +1000
         x_2 = 0
         step = 1
         while True:
@@ -81,7 +81,7 @@ class RootApproximationBI(RootApproximation):
         Returns:
             list: The root of the function.
         """
-        root = fsolve(func, 0)
+        root = fsolve(func, 1)
         return root
 
     def temp_method(self):

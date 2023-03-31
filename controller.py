@@ -4,24 +4,19 @@
 from lib import math_lib
 from lib import root_approximation
 from lib import trignometry
-from lib import input_validator
-from lib import output_xml_generator
+
 
 class Controller:
     """
-    Controller class    
+    Controller class for calculating the length of the chord between the two circles of radius r
     """
-
     def __init__(self):
-        self.radius = radius
-        # # self.radius = float(input("Enter the radius: "))
+        self.temp = 0
 
-        # if self.radius <= 0:
-        #     raise ValueError("Radius must be positive")
-
-    def calculate_length_wbi(self):
+    @staticmethod
+    def calculate_length_wbi(radius):
         """
-        calculate_length_WBI    
+        calculate_length_WBI method for calculating length without Builtin functions
         """
 
         rootapprox_wb = root_approximation.RootApproximationWBI()
@@ -33,13 +28,14 @@ class Controller:
             return temp_val + trigo_wb.sin(var_x) - 2
         alpha = rootapprox_wb.get_roots(funct_wb, 0.00001)
         alpha = maths_wb.get_pi()/2 + trigo_wb.sin(alpha[0])
-        length = 2 * self.radius * (1 - trigo_wb.cos(alpha/2))
+        length = 2 * radius * (1 - trigo_wb.cos(alpha/2))
         print("The length with WBI is :" + str(length))
         return length
 
-    def calculate_length_bi(self):
+    @staticmethod
+    def calculate_length_bi(radius):
         """
-        calculate_length_BI    
+        calculate_length_BI method for calculating length with Builtin functions
         """
 
         rootapprox_b = root_approximation.RootApproximationBI()
@@ -51,14 +47,7 @@ class Controller:
             return temp_val + trigo_b.sin(var_x) - 2
         alpha = rootapprox_b.get_roots(funct_b, 0.00001)
         alpha = maths_b.get_pi()/2 + trigo_b.sin(alpha[0])
-        length = 2 * self.radius * (1 - trigo_b.cos(alpha/2))
+        length = 2 * radius * (1 - trigo_b.cos(alpha/2))
         print("The length with BI is :" + str(length))
         return length
 
-
-radius = float(input_validator.validate_input())
-controller = Controller()
-length = controller.calculate_length_wbi()
-xml_handler = output_xml_generator.XMLHandler(radius, length)
-xml_handler.process_data()
-controller.calculate_length_bi()

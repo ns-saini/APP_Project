@@ -6,6 +6,8 @@
 
 ```bash
 pip install scipy
+pip install unittest
+pip install converage
 ```
 
 ## Execution
@@ -18,6 +20,17 @@ python main.py
 Output will be displayed through
 - The console in textual format
 - An output.xml file
+
+## Run tests
+```python
+python3 -m coverage run -m unittest
+```
+
+## Coverage Report 
+To be run after running above command 
+```python
+python3 -m coverage report
+```
 
 ## License
 
