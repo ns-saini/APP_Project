@@ -14,10 +14,11 @@ def prompt_float_input(prompt):
     """
     while True:
         try:
-            value = float(input(prompt.strip()))
+            value = float(input(prompt))
             return value
         except ValueError:
-            raise ValueError("Invalid input. Please enter a number.")
+            print("Invalid input. Please enter a number.",)
+            
 
 def validate_input():
     """
@@ -29,11 +30,11 @@ def validate_input():
     -------
     ValueError: If the input value is non-positive.
     """
-    while True:
+    while True:   
+                radius = prompt_float_input("Please enter a value for the radius of the coaster (e.g. 20): ")
+                if radius <= 0:
+                    print("Invalid input. The radius must be a positive number.")
+                else:
+                    return radius
         
-        radius = prompt_float_input("Please enter a value for the radius of the coaster (e.g. 20): ")
-        if radius <= 0:
-             raise ValueError("Invalid input. The radius must be a positive number.")
-        else:
-            return radius
 
