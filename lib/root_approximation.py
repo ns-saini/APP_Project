@@ -30,8 +30,8 @@ class RootApproximationWBI(RootApproximation):
         Returns:
         - The approximation for the root of the given function within the given tolerance.
         """
-        x_0 = -100
-        x_1 = +10000
+        x_0 = -1000.01
+        x_1 = +1000
         x_2 = 0
         step = 1
         while True:
