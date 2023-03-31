@@ -7,7 +7,7 @@
 ```bash
 pip install scipy
 pip install unittest
-pip install converage
+pip install coverage
 ```
 
 ## Execution
