@@ -13,10 +13,14 @@ class Controller:
     Controller class    
     """
     
-    def __init__(self):
-        pass
+    def __init__(self, radius):
+        #pass
         # global rad
-        # self.radius = radius
+        
+        if radius <= 0:
+            raise ValueError("Radius must be a positive number")
+        
+        self.radius = radius
         # rad = self.radius
 
         # # self.radius = float(input("Enter the radius: "))
@@ -60,8 +64,9 @@ class Controller:
         alpha = maths_b.get_pi()/2 + trigo_b.sin(alpha[0])
         length = 2 * radius * (1 - trigo_b.cos(alpha/2))
         print("The length with BI is :" + str(length))
+        return length
 
 
-# radius = float(input_validator.validate_input())
-# controller = Controller(radius)
+#radius = float(input_validator.validate_input())
+#controller = Controller(radius)
 
