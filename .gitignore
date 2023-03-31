@@ -4,6 +4,13 @@ latex/*.fdb_latexmk
 latex/*.fls
 latex/*.log
 latex/*.pdf
+latex/*.bbl
+latex/*.blg
+latex/*.idx
+latex/*.ind
+latex/*.out
+latex/*.toc
+latex/*.ilg
 latex/*.synctex.gz
 latex/.DS_Store
 .DS_Store
