@@ -11,7 +11,7 @@ def main():
     '''
 
     radius = float(input_validator.validate_input())
-    controller = ct.Controller(radius)
+    controller = ct.Controller()
     length = controller.calculate_length_wbi(radius)
     xml_handler = output_xml_generator.MyXMLHandler(radius, length)
     xml_handler.process_data()
