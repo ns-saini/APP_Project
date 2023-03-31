@@ -50,3 +50,4 @@ class Controller:
         length = 2 * radius * (1 - trigo_b.cos(alpha/2))
         print("The length with BI is :" + str(length))
         return length
+

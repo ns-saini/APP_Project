@@ -51,3 +51,12 @@ python3 -m coverage report
  
  3) Compile and preview.
 
+## pydoc
+To generate html file for each python file run the following command in command prompt
+```bash
+python -m pydoc -w <file address>
+```
+To Start an HTTP server on an arbitrary unused port and open a web browser to interactively browse documentation
+```bash
+python -m pydoc -b
+```
