@@ -29,7 +29,7 @@ class Controller:
         alpha = rootapprox_wb.get_roots(funct_wb, 0.00001)
         alpha = maths_wb.get_pi()/2 + trigo_wb.sin(alpha[0])
         length = 2 * radius * (1 - trigo_wb.cos(alpha/2))
-        print("The length with WBI is :" + str(length))
+        print("(INCARNATION 1) The length without BI is :" + str(length))
         return length
 
     @staticmethod
@@ -48,6 +48,6 @@ class Controller:
         alpha = rootapprox_b.get_roots(funct_b, 0.00001)
         alpha = maths_b.get_pi()/2 + trigo_b.sin(alpha[0])
         length = 2 * radius * (1 - trigo_b.cos(alpha/2))
-        print("The length with BI is :" + str(length))
+        print("(INCARNATION 2) The length with BI is :" + str(length))
         return length
 

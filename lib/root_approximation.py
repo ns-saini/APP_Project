@@ -39,8 +39,8 @@ class RootApproximationWBI(RootApproximation):
                 break
 
             x_2 = x_0 - (x_1 - x_0) * func(x_0) / (func(x_1) - func(x_0))
-            print(
-                f'Iteration-{step}, x2 = {x_2:.6f} and f(x2) = {func(x_2):.6f}')
+            # print(
+                # f'Iteration-{step}, x2 = {x_2:.6f} and f(x2) = {func(x_2):.6f}')
 
             x_0 = x_1
             x_1 = x_2
