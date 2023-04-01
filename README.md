@@ -64,7 +64,7 @@ python3 -m coverage report
 # Pylint
 Pylint enforces the best coding practices and ensures that the PEP 8 guidelines are followed. Run the command below to check for the code quality.
 ```bash
-pylint src/*.py
+pylint *.py
 ``` 
 <br />
 
