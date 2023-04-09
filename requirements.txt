@@ -1,0 +1,4 @@
+scipy
+unittest2
+coverage
+pylint

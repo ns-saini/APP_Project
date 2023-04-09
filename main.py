@@ -1,10 +1,22 @@
-from lib import root_approximation as ra
-from lib import trignometry as t
-from lib import math_lib as ml
-if __name__ == '__main__':
-    a = ra.RootApproximation()
-    mathLib = ml.MathLib()
-    m = t.Trignometry(m_lib=mathLib)
+'''
+main module
+'''
+import controller as ct
+from lib import input_validator
+from lib import output_xml_generator
 
-    f = lambda x: x ** 2 + m.sin(x) - 2
-    print(a.secant_approximation(f, 0, 1, .0001))
+def main():
+    '''
+    main method
+    '''
+
+    radius = float(input_validator.validate_input())
+    controller = ct.Controller()
+    length = controller.calculate_length_wbi(radius)
+    xml_handler = output_xml_generator.MyXMLHandler(radius, length)
+    xml_handler.process_data()
+    controller.calculate_length_bi(radius)
+
+
+if __name__ == '__main__':
+    main()
